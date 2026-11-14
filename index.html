@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rahel Revina | Portofolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --putih: #fffefd;
+      --cream: #fbf0cc;
+      --cream-muda: #fff8e1;
+      --beige: #f1e6d3;
+      --beige-tua: #e2d1b8;
+      --biru: #b7d3ea;
+      --biru-muda: #e4eff9;
+      --biru-tua: #4a789f;
+      --coklat: #8c6b55;
+      --coklat-tua: #5a4437;
+      --coklat-muda: #dcc7b0;
+      --teks: #4d3d33;
+    }
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 75px;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.06rem;
+      color: var(--teks);
+      background-color: var(--cream-muda);
+      line-height: 1.85;
+    }
+    h1, h2, h3, h4, h5, .navbar-brand {
+      font-family: 'Playfair Display', serif;
+      color: var(--coklat-tua);
+    }
+    section {
+      padding: 90px 0;
+    }
+    .latar-biru {
+      background-color: var(--biru-muda);
+    }
+    .latar-beige {
+      background-color: var(--beige);
+    }
+    .kecil {
+      color: #85705f;
+      font-size: 0.98rem;
+    }
+    .navbar {
+      background-color: var(--putih);
+      border-bottom: 1px solid var(--coklat-muda);
+      padding: 12px 0;
+    }
+    .navbar-brand {
+      font-size: 1.5rem;
+    }
+    .nav-link {
+      color: var(--teks);
+      font-size: 1rem;
+      margin: 0 4px;
+    }
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--biru-tua) !important;
+      font-weight: 600;
+    }
+    #beranda {
+      padding: 140px 0 100px;
+      background-color: var(--cream-muda);
+    }
+    #beranda h1 {
+      font-size: clamp(2.6rem, 6vw, 3.8rem);
+      line-height: 1.15;
+    }
+    .sapa {
+      font-size: 1.15rem;
+      color: var(--biru-tua);
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+    .info-pil {
+      display: inline-block;
+      background-color: var(--beige);
+      border: 1px solid var(--beige-tua);
+      color: var(--coklat-tua);
+      border-radius: 22px;
+      padding: 5px 18px;
+      margin: 4px 6px 4px 0;
+      font-size: 0.98rem;
+    }
+    .info-pil i {
+      color: var(--biru-tua);
+      margin-right: 6px;
+    }
+    .bingkai {
+      position: relative;
+      width: 290px;
+      height: 290px;
+      margin: 0 auto;
+    }
+    .bingkai::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      transform: translate(16px, 16px);
+      background-color: var(--biru);
+      border-radius: 16px;
+    }
+    .foto {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-radius: 16px;
+      border: 5px solid var(--coklat);
+      background-color: var(--beige);
+      object-fit: cover;
+    }
+    .btn-coklat {
+      background-color: var(--coklat);
+      color: white;
+      border-radius: 10px;
+      padding: 12px 28px;
+      font-size: 1.02rem;
+    }
+    .btn-coklat:hover {
+      background-color: var(--coklat-tua);
+      color: white;
+    }
+    .btn-garis {
+      border: 2px solid var(--biru-tua);
+      color: var(--biru-tua);
+      border-radius: 10px;
+      padding: 10px 28px;
+      font-size: 1.02rem;
+    }
+    .btn-garis:hover {
+      background-color: var(--biru-tua);
+      color: white;
+    }
+    .judul {
+      text-align: center;
+      font-size: 2.4rem;
+      margin-bottom: 10px;
+    }
+    .subjudul {
+      text-align: center;
+      color: #85705f;
+      max-width: 620px;
+      margin: 0 auto 14px;
+    }
+    .pemisah {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 48px;
+    }
+    .pemisah::before,
+    .pemisah::after {
+      content: "";
+      width: 54px;
+      height: 2px;
+      background-color: var(--coklat-muda);
+    }
+    .pemisah span {
+      width: 10px;
+      height: 10px;
+      background-color: var(--biru);
+      transform: rotate(45deg);
+    }
+    .kartu {
+      background-color: var(--putih);
+      border: 1px solid #e8dcc6;
+      border-radius: 18px;
+      padding: 32px;
+      height: 100%;
+      box-shadow: 0 6px 16px rgba(140, 107, 85, 0.1);
+    }
+    .kartu h5 {
+      font-weight: 600;
+      font-size: 1.35rem;
+      margin-bottom: 6px;
+    }
+    .ikon {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      color: var(--coklat-tua);
+      margin-bottom: 16px;
+    }
+    .ikon.biru {
+      background-color: var(--biru-muda);
+      color: var(--biru-tua);
+    }
+    .ikon.cream {
+      background-color: var(--cream);
+    }
+    .ikon.beige {
+      background-color: var(--beige);
+      color: var(--coklat);
+    }
+    .center .ikon {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .garis-waktu {
+      list-style: none;
+      padding-left: 54px;
+      margin: 0;
+      position: relative;
+    }
+    .garis-waktu::before {
+      content: "";
+      position: absolute;
+      left: 17px;
+      top: 18px;
+      bottom: 18px;
+      width: 2px;
+      background-color: var(--beige-tua);
+    }
+    .garis-waktu li {
+      position: relative;
+      padding-bottom: 26px;
+      min-height: 38px;
+    }
+    .garis-waktu li:last-child {
+      padding-bottom: 0;
+    }
+    .garis-waktu li > i {
+      position: absolute;
+      left: -54px;
+      top: 0;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--biru-muda);
+      color: var(--biru-tua);
+      border: 2px solid var(--biru);
+      font-size: 1rem;
+    }
+    .garis-waktu strong {
+      display: block;
+      color: var(--coklat-tua);
+      line-height: 1.45;
+      font-size: 1.05rem;
+    }
+    .skill {
+      display: inline-block;
+      background-color: var(--biru-muda);
+      border: 1px solid var(--biru);
+      color: var(--coklat-tua);
+      border-radius: 22px;
+      padding: 6px 18px;
+      margin: 4px 3px;
+      font-size: 1rem;
+    }
+    .skill i {
+      margin-right: 6px;
+      color: var(--biru-tua);
+    }
+    .skill.krem {
+      background-color: var(--cream);
+      border-color: #ead9a5;
+    }
+    .skill.krem i {
+      color: var(--coklat);
+    }
+    #sertifikasi {
+      padding: 70px 0;
+    }
+    .sertif {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      max-width: 400px;
+      margin: 0 auto;
+      background-color: var(--putih);
+      border: 1px solid #e8dcc6;
+      border-radius: 14px;
+      padding: 16px 22px;
+      box-shadow: 0 4px 12px rgba(140, 107, 85, 0.08);
+    }
+    .sertif .ikon {
+      width: 48px;
+      height: 48px;
+      font-size: 1.3rem;
+      margin: 0;
+      flex-shrink: 0;
+    }
+    .sertif strong {
+      display: block;
+      font-size: 1.1rem;
+      color: var(--coklat-tua);
+      line-height: 1.3;
+    }
+    .gambar-project {
+      width: 100%;
+      max-height: 360px;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 14px;
+      border: 1px solid #e8dcc6;
+      margin-bottom: 24px;
+    }
+    #kontak {
+      background-color: var(--coklat);
+      color: var(--cream-muda);
+    }
+    #kontak .judul {
+      color: var(--cream-muda);
+    }
+    #kontak .subjudul {
+      color: #ecdcc8;
+    }
+    #kontak .pemisah::before,
+    #kontak .pemisah::after {
+      background-color: var(--coklat-muda);
+    }
+    .kontak-box {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background-color: var(--putih);
+      color: var(--teks);
+      border-radius: 14px;
+      padding: 18px 22px;
+      text-decoration: none;
+      height: 100%;
+    }
+    .kontak-box:hover {
+      background-color: var(--beige);
+      color: var(--coklat-tua);
+    }
+    .kontak-box i {
+      font-size: 1.9rem;
+      color: var(--biru-tua);
+    }
+    .kontak-box small {
+      display: block;
+      color: #85705f;
+      line-height: 1.3;
+      font-size: 0.95rem;
+    }
+    .kontak-box strong {
+      font-size: 1.05rem;
+      word-break: break-all;
+    }
+    footer {
+      background-color: var(--coklat-tua);
+      color: #e6d3bd;
+      text-align: center;
+      padding: 24px 0;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#menu" data-bs-offset="90">
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#beranda">Rahel Revina</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-label="Buka menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#tentang">Tentang</a></li>
+          <li class="nav-item"><a class="nav-link" href="#pendidikan">Pendidikan</a></li>
+          <li class="nav-item"><a class="nav-link" href="#pengalaman">Pengalaman</a></li>
+          <li class="nav-item"><a class="nav-link" href="#proyek">Project</a></li>
+          <li class="nav-item"><a class="nav-link" href="#prestasi">Prestasi</a></li>
+          <li class="nav-item"><a class="nav-link" href="#keahlian">Keahlian</a></li>
+          <li class="nav-item"><a class="nav-link" href="#kontak">Kontak</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- BERANDA -->
+  <header id="beranda">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-md-7 order-2 order-md-1 text-center text-md-start">
+          <p class="sapa">Halo, perkenalkan saya</p>
+          <h1>Rahel Revina</h1>
+          <p class="fs-5 mt-3 mb-3">
+            Mahasiswa Sistem Informasi di Telkom University Surabaya. Saya senang belajar hal baru,
+            bekerja dalam tim, dan menyelesaikan setiap tanggung jawab dengan teliti.
+          </p>
+          <div class="mb-4">
+            <span class="info-pil"><i class="bi bi-calendar3"></i>Angkatan 2025</span>
+            <span class="info-pil"><i class="bi bi-star-fill"></i>IPK 3.92 / 4.00</span>
+            <span class="info-pil"><i class="bi bi-geo-alt-fill"></i>Jawa Timur</span>
+          </div>
+          <a href="#pengalaman" class="btn btn-coklat me-2 mb-2">Lihat pengalaman saya</a>
+          <a href="#kontak" class="btn btn-garis mb-2">Hubungi saya</a>
+        </div>
+        <div class="col-md-5 order-1 order-md-2">
+          <div class="bingkai">
+            <img src="assets/foto-rahel.jpeg" class="foto" alt="Foto Rahel Revina">
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- TENTANG -->
+  <section id="tentang" class="latar-biru">
+    <div class="container">
+      <h2 class="judul">Tentang Saya</h2>
+      <div class="pemisah"><span></span></div>
+      <div class="row justify-content-center">
+        <div class="col-lg-9">
+          <div class="kartu">
+            <p>
+              Saya mahasiswa aktif Program Studi Sistem Informasi, Fakultas Rekayasa Industri,
+              Telkom University Surabaya, angkatan 2025. Saat ini saya seorang mahasiswa semester 3. Di bangku kuliah, saya belajar tentang
+              pemrograman, pengelolaan data, dan bagaimana sebuah sistem informasi mendukung
+              proses bisnis dalam organisasi.
+            </p>
+            <p>
+              Saya adalah pribadi yang teliti, konsisten, bertanggung jawab, dan optimis.
+              Saya terbiasa menyelesaikan tugas dengan rapi dan berusaha menepati waktu yang
+              sudah disepakati.
+            </p>
+            <p class="mb-0">
+              Saya menyukai tantangan dan mencoba hal baru yang dapat meningkatkan kemampuan saya didalam problem solving keberanian dan 
+              kecerdasan emosional. Saya juga dapat bekerja sama didalam tim dan berinteraksi baik dengan orang lain.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- PENDIDIKAN -->
+  <section id="pendidikan">
+    <div class="container">
+      <h2 class="judul">Pendidikan</h2>
+      <div class="pemisah"><span></span></div>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="kartu">
+            <div class="ikon biru"><i class="bi bi-mortarboard-fill"></i></div>
+            <h5>Telkom University Surabaya</h5>
+            <p class="kecil mb-2">S1 Sistem Informasi | 2025 – sekarang</p>
+            <p class="mb-2"><strong>IPK: 3.92 / 4.00</strong></p>
+            <p class="mb-0">
+              Mempelajari perancangan dan pengembangan program menggunakan algoritma pemrograman,
+              pengelolaan data dan informasi, pemahaman proses bisnis dalam organisasi, serta analisis sistem informasi.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="kartu">
+            <div class="ikon beige"><i class="bi bi-journal-bookmark-fill"></i></div>
+            <h5>SMA St. Yosef Balige</h5>
+            <p class="kecil mb-3">Jurusan IPA, Sumatera Utara | 2022 – 2025</p>
+            <p class="mb-0">
+              Mempelajari Matematika, Biologi, Fisika, dan Kimia yang membentuk kemampuan
+              berpikir logis, analitis, serta keterampilan pemecahan masalah.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- PENGALAMAN -->
+  <section id="pengalaman" class="latar-beige">
+    <div class="container">
+      <h2 class="judul">Pengalaman Organisasi dan Kepanitiaan</h2>
+      <div class="pemisah"><span></span></div>
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <div class="kartu">
+            <h5>Telkom University Surabaya</h5>
+            <p class="kecil mb-4">2026 – sekarang</p>
+            <ul class="garis-waktu">
+              <li>
+                <i class="bi bi-shop"></i>
+                <strong>Student Staff</strong>
+                <span class="kecil">Koperasi Hitalokatara Telkom University Surabaya</span>
+              </li>
+              <li>
+                <i class="bi bi-people-fill"></i>
+                <strong>Anggota Dewan Perwakilan Mahasiswa (DPM)</strong>
+                <span class="kecil">Organisasi kemahasiswaan</span>
+              </li>
+              <li>
+                <i class="bi bi-person-badge-fill"></i>
+                <strong>Wakil Ketua Kegiatan</strong>
+                <span class="kecil">Panitia Kegiatan Dewan Mendengar</span>
+              </li>
+              <li>
+                <i class="bi bi-megaphone-fill"></i>
+                <strong>Staf Divisi Hubungan Masyarakat (Humas)</strong>
+                <span class="kecil">Panitia Seminar Advokasi</span>
+              </li>
+              <li>
+                <i class="bi bi-calendar-event-fill"></i>
+                <strong>Staf Divisi Acara</strong>
+                <span class="kecil">Panitia Kongres Mahasiswa</span>
+              </li>
+              <li>
+                <i class="bi bi-chat-dots-fill"></i>
+                <strong>Staf Divisi Hubungan Masyarakat (Humas)</strong>
+                <span class="kecil">Panitia Ospek Jurusan</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="kartu">
+            <h5>SMA</h5>
+            <p class="kecil mb-4">2022 – 2024</p>
+            <ul class="garis-waktu">
+              <li>
+                <i class="bi bi-heart-pulse-fill"></i>
+                <strong>Anggota Organisasi God Voice</strong>
+                <span class="kecil">Kegiatan penyuluhan kesehatan antar sekolah</span>
+              </li>
+              <li>
+                <i class="bi bi-music-note-beamed"></i>
+                <strong>Anggota Ekstrakurikuler Marching Band</strong>
+                <span class="kecil">Aktif dalam latihan dan kegiatan penampilan</span>
+              </li>
+              <li>
+                <i class="bi bi-chat-quote-fill"></i>
+                <strong>Panitia Bulan Bahasa</strong>
+                <span class="kecil">Panitia pelaksanaan kegiatan</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- PROJECT -->
+  <section id="proyek">
+    <div class="container">
+      <h2 class="judul">Project</h2>
+      <div class="pemisah"><span></span></div>
+      <div class="row justify-content-center">
+        <div class="col-lg-9">
+          <div class="kartu">
+            <img src="assets/gambar-project.png"
+                 class="gambar-project"
+                 alt="Tampilan konsep aplikasi Time Market Place">
+            <h5>Time Market Place</h5>
+            <p class="kecil mb-3">Business Analyst | Project Design</p>
+            <p>
+              Time Market Place merupakan konsep aplikasi untuk membantu pengguna
+              menemukan pekerjaan part-time dan freelance sesuai minat, bakat,
+              serta keterampilan mereka.
+            </p>
+            <h6 class="fw-semibold mt-3">Main Features</h6>
+            <ul class="mb-0">
+              <li>Pencarian pekerjaan berdasarkan lokasi (GPS).</li>
+              <li>Rekomendasi pekerjaan sesuai minat dan keterampilan.</li>
+              <li>Pemantauan status lamaran pekerjaan.</li>
+              <li>Fitur chat dengan pemberi kerja.</li>
+              <li>Informasi saldo dan riwayat pendapatan.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- PRESTASI -->
+  <section id="prestasi">
+    <div class="container">
+      <h2 class="judul">Prestasi</h2>
+      <div class="pemisah"><span></span></div>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="kartu text-center center">
+            <div class="ikon biru"><i class="bi bi-lightbulb-fill"></i></div>
+            <h5>Peserta OSN</h5>
+            <p class="mb-0">Mengikuti Olimpiade Sains Nasional (OSN) bidang Biologi.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="kartu text-center center">
+            <div class="ikon cream"><i class="bi bi-star-fill"></i></div>
+            <h5>Peringkat Kelas</h5>
+            <p class="mb-0">Peringkat 2 di kelas X, peringkat 3 di kelas XI, dan peringkat 2 di kelas XII.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="kartu text-center center">
+            <div class="ikon beige"><i class="bi bi-trophy-fill"></i></div>
+            <h5>Juara 3</h5>
+            <p class="mb-0">Lomba musikalisasi drama dalam rangka Bulan Bahasa.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- SERTIFIKASI -->
+  <section id="sertifikasi" class="latar-biru">
+    <div class="container">
+      <h2 class="judul">Sertifikasi</h2>
+      <div class="pemisah"><span></span></div>
+      <div class="sertif">
+        <div class="ikon cream"><i class="bi bi-patch-check-fill"></i></div>
+        <div>
+          <strong>SAP SCM500</strong>
+          <span class="kecil">Sertifikasi</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- KEAHLIAN -->
+  <section id="keahlian" class="latar-beige">
+    <div class="container">
+      <h2 class="judul">Keahlian</h2>
+      <div class="pemisah"><span></span></div>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="kartu">
+            <h5 class="mb-2">Soft Skills</h5>
+            <p class="kecil mb-3">Kemampuan yang membantu saya bekerja dengan orang lain.</p>
+            <span class="skill krem"><i class="bi bi-mic-fill"></i>Komunikasi dan public speaking</span>
+            <span class="skill krem"><i class="bi bi-people-fill"></i>Kerja sama tim dan adaptasi</span>
+            <span class="skill krem"><i class="bi bi-clock-fill"></i>Manajemen waktu</span>
+            <span class="skill krem"><i class="bi bi-puzzle-fill"></i>Problem solving</span>
+            <span class="skill krem"><i class="bi bi-pencil-fill"></i>Keterampilan menulis</span>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="kartu">
+            <h5 class="mb-2">Hard Skills / Kemampuan Teknis</h5>
+            <span class="skill"><i class="bi bi-file-earmark-word-fill"></i>Microsoft Word</span>
+            <span class="skill"><i class="bi bi-file-earmark-excel-fill"></i>Microsoft Excel</span>
+            <span class="skill"><i class="bi bi-database-fill"></i>MySQL</span>
+            <span class="skill"><i class="bi bi-terminal-fill"></i>Linux</span>
+            <span class="skill"><i class="bi bi-vector-pen"></i>UI/UX Design (Figma dan Canva)</span>
+            <span class="skill"><i class="bi bi-clipboard-check-fill"></i>Kemampuan dasar administrasi</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- KONTAK -->
+  <section id="kontak">
+    <div class="container">
+      <h2 class="judul">Hubungi Saya</h2>
+      <p class="subjudul">
+        Jika ingin berdiskusi, bekerja sama, atau sekadar berkenalan,
+        silakan hubungi saya melalui salah satu kontak berikut.
+      </p>
+      <div class="pemisah"><span></span></div>
+      <div class="row g-3 justify-content-center">
+        <div class="col-md-6 col-lg-5">
+          <a class="kontak-box" href="tel:081347384939">
+            <i class="bi bi-telephone-fill"></i>
+            <div>
+              <small>Telepon</small>
+              <strong>081-347-384-939</strong>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-6 col-lg-5">
+          <a class="kontak-box" href="mailto:rahelrevina240407@gmail.com">
+            <i class="bi bi-envelope-heart-fill"></i>
+            <div>
+              <small>Email</small>
+              <strong>rahelrevina240407@gmail.com</strong>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-6 col-lg-5">
+          <a class="kontak-box" href="https://linkedin.com/in/rahel-revina66698838a" target="_blank" rel="noopener">
+            <i class="bi bi-linkedin"></i>
+            <div>
+              <small>LinkedIn</small>
+              <strong>rahel-revina66698838a</strong>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-6 col-lg-5">
+          <a class="kontak-box" href="https://instagram.com/rahellrevna" target="_blank" rel="noopener">
+            <i class="bi bi-instagram"></i>
+            <div>
+              <small>Instagram</small>
+              <strong>@rahellrevna</strong>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      Terima kasih sudah berkunjung. &copy; 2026 Rahel Revina
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
